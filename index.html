@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <title>Nielit O Level Weightage Calculator</title>
+  <style>
+    * {
+      font-family: 'Open Sans', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="w3-panel">
+    <div class="w3-card-4 w3-padding-32">
+      <div class="w3-container w3-teal">
+        <h2 class="w3-center">Nielit O Level Weightage Calculator</h2>
+      </div>
+
+      <form class="w3-container" onsubmit="event.preventDefault(); myFun();">
+        <p>
+          <label>Enter Theory Marks</label>
+          <input id="th" class="w3-input" type="number" max="100" required>
+        </p>
+        <p>
+          <label>Enter Practical Marks</label>
+          <input id="pr" class="w3-input" type="number" max="100" required>
+        </p>
+        <input type="submit" class="w3-btn w3-teal w3-round w3-padding-large w3-margin">
+      </form>
+      <h4 id="ans" class="w3-panel w3-center w3-teal">
+        <h4>
+    </div>
+  </div>
+  <div class="w3-panel w3-grey w3-center">
+    <h5> Copyright &#169; technicaldeepakraj.com </h5>
+  </div>
+
+  <script>
+    function myFun() {
+      let thr = document.getElementById("th").value;
+      let prt = document.getElementById("pr").value;
+      let total = ((thr * 60) / 100) + ((prt * 40) / 100);
+      if (thr >= 33 && prt >= 33) {
+
+        if (total >= 85) {
+          document.getElementById("ans").innerHTML = "😃 Pass Grade S " + total + "%";
+        }
+        else if (total >= 75) {
+          document.getElementById("ans").innerHTML = "😃 Pass Grade A " + total + "%";
+        }
+        else if (total >= 65) {
+          document.getElementById("ans").innerHTML = "😃 Pass Grade B " + total + "%";
+        }
+        else if (total >= 55) {
+          document.getElementById("ans").innerHTML = "😃 Pass Grade C " + total + "%";
+        }
+        else if (total >= 50) {
+          document.getElementById("ans").innerHTML = "😃 Pass Grade D " + total + "%";
+        }
+        else {
+          document.getElementById("ans").innerHTML = "😳 Fail Grade F " + total + "%";
+        }
+      }
+      else {
+        document.getElementById("ans").innerHTML = "😳 Fail Grade F " + total + "%";
+      }
+    }
+
+    document.oncontextmenu = new Function("return false;");
+
+  </script>
+</body>
+
+</html>
